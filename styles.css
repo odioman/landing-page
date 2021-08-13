@@ -1,0 +1,151 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+  max-width: 65em;
+}
+
+.split {
+  display: flex;
+  gap: 2em;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.split > * {
+  flex-basis: 30%;
+  min-width: 15em;
+}
+
+section {
+  padding: 7em 0;
+}
+
+.spacing > * + * {
+  margin-top: var(--spacer, 2rem);
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 1em 1.25em;
+  background: blue;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.125em;
+  border-radius: 0.25em;
+  transition: transform 250ms ease-in-out, opacity 250ms linear;
+}
+
+.btn:hover,
+.btn:focus {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+.primary-title {
+  font-size: 4rem;
+  font-size: clamp(3rem, calc(5vw + 1rem), 4.5rem);
+  line-height: 1;
+  text-transform: uppercase;
+  color: white;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(2.5rem, calc(5vw + 1rem), 4rem);
+  line-height: 1;
+  color: #17353d;
+  margin-bottom: 5rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 15em 0;
+  background: #222;
+
+  @supports (background-blend-mode: multiply) {
+    background: url(../img/shoe-3.png), radial-gradient(#444, #111);
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
+
+.featured-item {
+  display: block;
+  position: relative;
+  transform: scale(0.85);
+  text-decoration: none;
+  color: #333;
+  text-align: center;
+}
+
+span {
+  display: block;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.featured-item:hover {
+  transform: scale(1.2);
+}
+
+.featured-item::after {
+  content: "";
+  position: absolute;
+  padding: 75% 75% 0 0;
+  top: 10%;
+  left: 10%;
+  border-radius: 50%;
+  background: #2193b0;
+  z-index: -1;
+}
+
+.featured-details {
+  opacity: 0;
+}
+
+.featured-details:hover {
+  opacity: 1;
+}
+
+.product {
+  background: radial-gradient(orange, red);
+  padding: 3em;
+  border-radius: 3em;
+  margin-bottom: 3em;
+  text-align: center;
+}
+
+.product-title {
+  font-size: 4rem;
+  color: #fff;
+  line-height: 1.1;
+  text-shadow: 0 0 0.2em rgba(#000, 0.2);
+}
